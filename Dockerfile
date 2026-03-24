@@ -228,7 +228,7 @@ RUN --mount=type=cache,id=openclaw-bookworm-apt-cache,target=/var/cache/apt,shar
         "$(dpkg --print-architecture)" > /etc/apt/sources.list.d/docker.list && \
       apt-get update && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        docker-ce-cli docker-compose-plugin; \
+        docker-ce-cli docker-compose-plugin docker-buildx-plugin; \
     fi
 
 # Expose the CLI binary without requiring npm global writes as non-root.
